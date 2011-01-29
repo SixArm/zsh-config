@@ -19,6 +19,7 @@ source /etc/environment
 # what counts as a word for completion and backspacing;
 # notably we omit the slash because we want tcsh-like
 # behavior of using alt-backspace to go up a file path.
+export WORDCHARS='*?_-.[]~&;!#$%^(){}<>'
 
 
 ### HISTORY ###
@@ -59,14 +60,16 @@ setopt NO_BEEP
 
 #"running" `/etc` actually does a `cd /etc`
 setopt AUTO_CD
-#correct mistakes
-setopt CORRECT
+
 setopt AUTO_LIST 
+
 #allow tab completion in the middle of a word
 setopt COMPLETE_IN_WORD
+
 #tab completion moves to end of word
 setopt ALWAYS_TO_END
 setopt listtypes 
+
 # %1 killed. will show up exactly when it is killed.
 setopt interactivecomments
 unsetopt flowcontrol
@@ -85,3 +88,11 @@ setopt appendhistory autocd beep extendedglob nomatch notify
 zstyle :compinstall filename '~/.zshrc'
 autoload -Uz compinit
 compinit
+
+
+### SIXARM SPECIFIC SETUP ###
+
+if [[ -x /home/sixarm/github/sixarm_unix_shell_scripts/ruby-versioner ]]
+then
+  source /home/sixarm/github/sixarm_unix_shell_scripts/ruby-versioner 192p136
+fi
