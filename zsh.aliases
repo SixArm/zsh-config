@@ -1,0 +1,23 @@
+###
+#
+# Alias
+#
+###
+
+# cdw => cd to web directory
+alias cdw='cd /var/www/'
+
+# e => edit
+alias e='emacs -nw'
+
+# f => find in files
+alias f='ack-grep'
+
+# l => list files
+alias l='ls -CF'
+
+# m => most (or more)
+alias m='most'
+
+# rs => rsync
+alias rs='rsync --archive --compress --update --verbose --progress --partial --partial-dir=.rsync-partial-dir'
