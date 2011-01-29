@@ -12,10 +12,13 @@
 #
 # Global Order: zshenv, zprofile, zshrc, zlogin
 
-if [[ -z "$PATH" || "$PATH" == "/bin:/usr/bin" ]]
-then
-	export PATH="/usr/local/bin:/usr/bin:/bin:/usr/games"
-fi
+source /etc/environment
+
+### CONSTANTS ###
+ 
+# what counts as a word for completion and backspacing;
+# notably we omit the slash because we want tcsh-like
+# behavior of using alt-backspace to go up a file path.
 
 
 ### HISTORY ###
@@ -82,4 +85,3 @@ setopt appendhistory autocd beep extendedglob nomatch notify
 zstyle :compinstall filename '~/.zshrc'
 autoload -Uz compinit
 compinit
-
