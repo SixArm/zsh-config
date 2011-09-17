@@ -39,7 +39,7 @@ fi
 zstyle ':completion:*:sudo:*' command-path /usr/local/sbin /usr/local/bin \
 			     /usr/sbin /usr/bin /sbin /bin /usr/X11R6/bin
 
-unalias run-help
+[[ -n $(alias run-help) ]] && unalias run-help
 autoload run-help
 
 # If you don't want compinit called here, place the line
