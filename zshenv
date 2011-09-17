@@ -12,7 +12,7 @@
 #
 # Global Order: zshenv, zprofile, zshrc, zlogin
 
-source /etc/environment
+. /etc/environment
 
 ### CONSTANTS ###
  
@@ -92,7 +92,12 @@ compinit
 
 ### SIXARM SPECIFIC SETUP ###
 
-if [[ -x /home/sixarm/github/sixarm_unix_shell_scripts/ruby-versioner ]]
-then
-  source /home/sixarm/github/sixarm_unix_shell_scripts/ruby-versioner 192p136
-fi
+# user source
+for file in /opt/sixarm_unix_shell_scripts/ruby-versioner; do
+  [[ -f $file ]] && . $file
+done
+
+# sudo executables
+for file in /opt/sixarm_unix_shell_scripts/trackpoint-set-speed-and-sensitivity-to-fastest; do
+  [[ -x $file ]] && sudo $file
+done
