@@ -21,3 +21,9 @@ alias m='most'
 
 # rs => rsync
 alias rs='rsync --archive --compress --update --verbose --progress --partial --partial-dir=.rsync-partial-dir'
+
+# bi => bundle install with best isolation options
+alias bi='bundle install --binstubs --path vendor/bundle'
+
+# bx => bundle exec 
+alias bx='bundle exec'
