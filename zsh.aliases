@@ -13,6 +13,9 @@ alias e='emacs -nw'
 # f => find in files
 alias f='ack-grep'
 
+# g => git
+alias g='ack-grep'
+
 # l => list files
 alias l='ls -CF'
 
