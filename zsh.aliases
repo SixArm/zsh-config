@@ -28,5 +28,8 @@ alias rs='rsync --archive --compress --update --verbose --progress --partial --p
 # bi => bundle install with best isolation options
 alias bi='bundle install --binstubs --path vendor/bundle'
 
+# br => bundle exec rake
+alias br='bundle exec rake'
+
 # bx => bundle exec 
 alias bx='bundle exec'
