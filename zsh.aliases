@@ -31,5 +31,7 @@ alias bi='bundle install --binstubs --path vendor/bundle'
 # br => bundle exec rake
 alias br='bundle exec rake'
 
-# bx => bundle exec 
+# bx  => bundle exec
 alias bx='bundle exec'
+alias bxr='bundle exec rake'
+alias bxrs='bundle exec rspec'
