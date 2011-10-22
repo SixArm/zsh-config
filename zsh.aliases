@@ -35,3 +35,4 @@ alias bi-production='RAILS_ENV=production bundle install --binstubs --path vendo
 alias bx='bundle exec'
 alias bxr='bundle exec rake'
 alias bxrs='bundle exec rspec'
+alias bxjhw='bundle exec jasmine-headless-webkit'
