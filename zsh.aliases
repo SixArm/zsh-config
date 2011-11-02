@@ -10,6 +10,9 @@ alias cdw='cd /var/www/'
 # e => edit
 alias e='emacs -nw'
 
+# ee => emacsclient or email
+alias ee='emacsclient -c -t -a emacs -nw'
+
 # f => find in files
 alias f='ack-grep'
 
