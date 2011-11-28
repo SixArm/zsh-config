@@ -17,7 +17,7 @@ alias ee='emacsclient -c -t -a emacs -nw'
 alias f='ack-grep'
 
 # g => git
-alias g='ack-grep'
+alias g='git'
 
 # l => list files
 alias l='ls -CF'
