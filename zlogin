@@ -7,3 +7,5 @@
 # msgs, from, etc.)
 #
 # Global Order: zshenv, zprofile, zshrc, zlogin
+
+emacs --daemon  $1 >/dev/null 2>&1

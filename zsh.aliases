@@ -24,11 +24,14 @@ alias e='emacs -nw'
 #   # e = edit with emacs || vi.
 #   hash emacs 2>&- && alias e='emacs -nw' || alias e='vi'
 
+# ee => emacsclient or email
+alias ee='emacsclient -c -t -a emacs -nw'
+
 # f => find in files
 alias f='ack-grep'
 
 # g => git
-alias g='ack-grep'
+alias g='git'
 
 # l => list files
 alias l='ls -1AF'
