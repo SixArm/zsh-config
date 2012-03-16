@@ -48,6 +48,9 @@ alias rs='rsync --archive --compress --progress --update --verbose'
 # rsp => rsync with partial and partial-dir for fast resume of broken transfers (requires directory write permission)
 alias rsp='rsync --archive --compress --progress --update --verbose --partial --partial-dir=.rsync-partial-dir'
 
+# shell = print the current shell, e.g. bash, csh, zsh
+alias shell='ps -p $$ -o comm='
+
 
 ### Applications
 
@@ -82,3 +85,8 @@ alias bx-pro='RAILS_ENV=production bundle exec'
 # Ruby On Rails Restart - Phusion Passenger in the app's top directory
 alias rrr='touch tmp/restart.txt'
 
+
+### Perl
+
+alias pie='perl -p -i -e'
+alias pie-all='xargs perl -p -i -e'
