@@ -50,17 +50,8 @@ if [[ -z "$skip_global_compinit" ]]; then
   compinit
 fi
 
-
-# Aliases
-if [ -f /etc/zsh/zsh.aliases ]; then
-    . /etc/zsh/zsh.aliases
-fi
-
-
-# Prompts
-if [ -f /etc/zsh/zsh.prompts ]; then
-    . /etc/zsh/zsh.prompts
-fi
+# Includes
+for f in /etc/zsh.d/*; do [ -r $f ] && source $f; done
 
 
 ### BINDINGS ###
@@ -70,6 +61,5 @@ bindkey -e
 
 # backward delete
 bindkey "\e[3~" delete-char
-
 
 
