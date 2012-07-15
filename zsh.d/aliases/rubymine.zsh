@@ -1,0 +1,1 @@
+[ -e /opt/rubymine/bin/rubymine.sh ] && alias rubymine='/opt/rubymine/bin/rubymine.sh'
