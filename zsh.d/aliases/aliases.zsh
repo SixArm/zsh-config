@@ -4,7 +4,7 @@
 [ -d /d ] && alias d="cd /d/; cd "
 
 # e => edit
-alias e='emacs -nw'
+alias e='emacs -nw --color=no'
 # bash:
 #   # e = edit with emacs || vi.
 #   hash emacs 2>&- && alias e='emacs -nw' || alias e='vi'
