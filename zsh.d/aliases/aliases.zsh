@@ -1,32 +1,63 @@
 # Aliases for zsh
 
-# d = directory jump
+# d => directory jump
 [ -d /d ] && alias d="cd /d/; cd "
 
-# e => edit
-alias e='emacs -nw'
-# bash:
-#   # e = edit with emacs || vi.
-#   hash emacs 2>&- && alias e='emacs -nw' || alias e='vi'
+# edit
+alias e="$EDITOR"
 
-# ee => emacsclient or email
-alias ee='emacsclient -c -t -a emacs -nw'
-
-# f => find in files
+# find text
 alias f='ack-grep'
 
-# g => git
+# git
 alias g='git'
 
-# l => list files
+# list files, one per line, almost all files, with file classifier
 alias l='ls -1AF'
 
-# m => most (or more)
-alias m='most'
-# bash:
-#   # m = most || more
-#   hash most 2>&- && alias m='most' || alias m='more'
+# pager
+alias p="$PAGER"
 
 # shell = print the current shell, e.g. bash, csh, zsh
 alias shell='ps -p $$ -o comm='
 
+
+# Suggestions from zsh-lovers
+# http://grml.org/zsh/zsh-lovers.html
+
+# alias -g CA="2>&1 | cat -A"
+# alias -g C='| wc -l'
+# alias -g D="DISPLAY=:0.0"
+# alias -g DN=/dev/null
+# alias -g ED="export DISPLAY=:0.0"
+# alias -g EG='|& egrep'
+# alias -g EH='|& head'
+# alias -g EL='|& less'
+# alias -g ELS='|& less -S'
+# alias -g ETL='|& tail -20'
+# alias -g ET='|& tail'
+# alias -g F=' | fmt -'
+# alias -g G='| egrep'
+# alias -g H='| head'
+# alias -g HL='|& head -20'
+# alias -g Sk="*~(*.bz2|*.gz|*.tgz|*.zip|*.z)"
+# alias -g LL="2>&1 | less"
+# alias -g L="| less"
+# alias -g LS='| less -S'
+# alias -g MM='| most'
+# alias -g M='| more'
+# alias -g NE="2> /dev/null"
+# alias -g NS='| sort -n'
+# alias -g NUL="> /dev/null 2>&1"
+# alias -g PIPE='|'
+# alias -g R=' > /c/aaa/tee.txt '
+# alias -g RNS='| sort -nr'
+# alias -g S='| sort'
+# alias -g TL='| tail -20'
+# alias -g T='| tail'
+# alias -g US='| sort -u'
+# alias -g VM=/var/log/messages
+# alias -g X0G='| xargs -0 egrep'
+# alias -g X0='| xargs -0'
+# alias -g XG='| xargs egrep'
+# alias -g X='| xargs'
