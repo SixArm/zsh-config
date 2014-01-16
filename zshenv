@@ -40,6 +40,11 @@
 . /etc/environment
 [[ -o norcs ]] && exit 0
 
+# System-wide environment settings for zsh(1).
+# This block comes from Mac OSX 10.9.
+if [ -x /usr/libexec/path_helper ]; then
+        eval `/usr/libexec/path_helper -s`
+fi
 
 ### CONSTANTS ###
  
