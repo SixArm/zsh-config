@@ -1,27 +1,5 @@
 # Aliases for zsh
 
-# d => directory jump
-[ -d /d ] && alias d="cd /d/; cd "
-
-# edit
-alias e="$EDITOR"
-
-# find text
-alias f='ack-grep'
-
-# git
-alias g='git'
-
-# list files, one per line, almost all files, with file classifier
-alias l='ls -1AF'
-
-# pager
-alias p="$PAGER"
-
-# shell = print the current shell, e.g. bash, csh, zsh
-alias shell='ps -p $$ -o comm='
-
-
 # Suggestions from zsh-lovers
 # http://grml.org/zsh/zsh-lovers.html
 
