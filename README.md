@@ -5,9 +5,9 @@
 
 On our systems we install these files as globals for all users. This is probably dangerous for you.
 
-To do it:
+To install and overwrite your typical existing zsh files:
 
-    cp -R z* /etc
+    cp -R sixarm_zsh_etc_files/z* /etc
 
 
 ## zsh startup files
