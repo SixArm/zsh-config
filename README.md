@@ -1,14 +1,14 @@
 # SixArm.com » Z shell » <br> /etc/zsh* system setup
 
 
-## Global install
+## System-wide install
 
-On our systems we install these files as globals for all users. This is probably dangerous for you.
 
-To install and overwrite your typical existing zsh files:
+To install system-wide for all your users, copy these files to your system directory. Caution: this may overwrite you system's existing zsh files. 
 
-    cp -R sixarm_zsh_etc_files/z* /etc
+To copy these files:
 
+    sudo cp -R sixarm_zsh_etc_files/{zlogin,zlogout,zprofile,zshenv,zshrc,zsh.d} /etc/
 
 ## zsh startup files
 
