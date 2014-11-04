@@ -3,8 +3,7 @@
 # rs => rsync with settings for typical mirroring 
 alias rs='rsync -aHuOxzvi --progress'
 
-# rsp => rsync with partial and partial-dir,
-# for fast resume of any broken transfers;
-# this needs directory write permission.
-alias rsp='rsync --archive --compress --progress --update --verbose --partial --partial-dir=.rsync-partial-dir'
-
+# rsp => rsync with progress bar and and partial flags,
+# suitable for fast resume of any broken transfers;
+# the partial flags need directory write permission.
+alias rsp='rsync -aHuOxzvi --progress --partial --partial-dir=.rsync-partial-dir'
