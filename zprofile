@@ -5,3 +5,5 @@
 # shells invoked with the -l flag.)
 #
 # Global Order: zshenv, zprofile, zshrc, zlogin
+
+for f in /etc/zprofile.d/**/*; do; [ -r $f ] && source $f; done

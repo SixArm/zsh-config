@@ -9,3 +9,5 @@
 # Global Order: zshenv, zprofile, zshrc, zlogin
 
 emacs --daemon  $1 >/dev/null 2>&1
+
+for f in /etc/zlogin.d/**/*; do; [ -r $f ] && source $f; done

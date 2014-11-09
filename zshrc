@@ -50,9 +50,6 @@ if [[ -z "$skip_global_compinit" ]]; then
   compinit
 fi
 
-# Includes
-for f in /etc/zsh.d/*; do [ -r $f ] && source $f; done
-
 
 ### BINDINGS ###
 
@@ -62,4 +59,4 @@ bindkey -e
 # backward delete
 bindkey "\e[3~" delete-char
 
-
+for f in /etc/zshrc.d/**/*; do; [ -r $f ] && source $f; done
