@@ -1,14 +1,13 @@
 # SixArm.com » Z shell » <br> /etc/zsh* system setup
 
 
-## System-wide install
+## To install for all users
 
+To install for all users system-wide:
 
-To install system-wide, for all your users, copy these files to your system directory.
+    sudo cp -R z* /etc/
 
 Caution: this may overwrite you system's existing zsh files, so look first.
-
-    sudo cp -R sixarm_zsh_etc_files/z* /etc/
 
 
 ## zsh startup files
