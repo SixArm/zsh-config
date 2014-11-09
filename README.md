@@ -29,40 +29,16 @@ We organize our files in corresponding directories:
     zlogin.d
     zlogout.d
 
-<<<<<<< HEAD
 The default location for zsh system-wide files is in `/etc`.
-||||||| merged common ancestors
-=======
-Each of these files has a corresponding directory of files:
-
-    zshenv.d
-    zprofile.d
-    zshrc.d
-    zlogin.d
-    zlogout.d
-
->>>>>>> eecd0ca43ed2ed0cd0a276561a3864786aeb46ca
 
 The default location for zsh user files is in $HOME. We can customize this by setting $ZDOTDIR.
 
-<<<<<<< HEAD
-||||||| merged common ancestors
-.zshenv is sourced on all invocations of the shell, unless the -f option is set. 
-=======
-.zshenv is sourced on all invocations of the shell, unless the -f option is set.
->>>>>>> eecd0ca43ed2ed0cd0a276561a3864786aeb46ca
 
-<<<<<<< HEAD
 ### zshenv
 
 `zshenv` is sourced on all invocations of the shell, unless the -f option is set.
 
 What goes in it:
-||||||| merged common ancestors
-What goes in it: 
-=======
-What goes in it:
->>>>>>> eecd0ca43ed2ed0cd0a276561a3864786aeb46ca
 
   * Set up the command search path
   * Other important environment variables
@@ -75,13 +51,7 @@ What does NOT go in it:
 
 ### zprofile
 
-<<<<<<< HEAD
 `zprofile` is sourced in login shells. It is meant as an alternative to `zlogin` for `ksh` fans; the two are not intended to be used together, although this could certainly be done if desired.
-||||||| merged common ancestors
-.zprofile is sourced in login shells. .zprofile is meant as an alternative to .zlogin for ksh fans; the two are not intended to be used together, although this could certainly be done if desired. 
-=======
-.zprofile is sourced in login shells. .zprofile is meant as an alternative to .zlogin for ksh fans; the two are not intended to be used together, although this could certainly be done if desired.
->>>>>>> eecd0ca43ed2ed0cd0a276561a3864786aeb46ca
 
 What goes in it:
 
@@ -94,24 +64,11 @@ What does NOT go in it:
   * Alias definitions
   * Options
   * Environment variable settings
-<<<<<<< HEAD
-||||||| merged common ancestors
-  
-### .zshrc
-=======
 
-### .zshrc
->>>>>>> eecd0ca43ed2ed0cd0a276561a3864786aeb46ca
 
-<<<<<<< HEAD
 ### zshrc
 
 `zshrc` is sourced in interactive shells.
-||||||| merged common ancestors
-.zshrc is sourced in interactive shells. 
-=======
-.zshrc is sourced in interactive shells.
->>>>>>> eecd0ca43ed2ed0cd0a276561a3864786aeb46ca
 
 What goes in it:
 
