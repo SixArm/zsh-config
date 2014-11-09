@@ -15,15 +15,13 @@ Caution: this may overwrite you system's existing zsh files, so look first.
 
 There are five startup files that zsh will read commands from in order:
 
-    .zshenv
-    .zprofile
-    .zshrc
-    .zlogin
-    .zlogout
+    zshenv
+    zprofile
+    zshrc
+    zlogin
+    zlogout
 
-The default location for this is in $HOME. We can customize this by setting $ZDOTDIR.
-
-Each of these files has a corresponding directory of files:
+We organize our files in corresponding directories:
 
     zshenv.d
     zprofile.d
@@ -31,10 +29,14 @@ Each of these files has a corresponding directory of files:
     zlogin.d
     zlogout.d
 
+The default location for zsh system-wide files is in `/etc`.
 
-### .zshenv
+The default location for zsh user files is in $HOME. We can customize this by setting $ZDOTDIR.
 
-.zshenv is sourced on all invocations of the shell, unless the -f option is set.
+
+### zshenv
+
+`zshenv` is sourced on all invocations of the shell, unless the -f option is set.
 
 What goes in it:
 
@@ -47,9 +49,9 @@ What does NOT go in it:
   * Anything that assumes the shell is attached to a tty
 
 
-### .zprofile
+### zprofile
 
-.zprofile is sourced in login shells. .zprofile is meant as an alternative to .zlogin for ksh fans; the two are not intended to be used together, although this could certainly be done if desired.
+`zprofile` is sourced in login shells. It is meant as an alternative to `zlogin` for `ksh` fans; the two are not intended to be used together, although this could certainly be done if desired.
 
 What goes in it:
 
@@ -63,20 +65,20 @@ What does NOT go in it:
   * Options
   * Environment variable settings
 
-### .zshrc
+### zshrc
 
-.zshrc is sourced in interactive shells.
+`zshrc` is sourced in interactive shells.
 
 What goes in it:
 
   * Commands to set up aliases, functions, options, key bindings, etc.
 
 
-### .zlogin
+### zlogin
 
-.zlogin is like .zprofile, except sourced after .zshrc.
+`zlogin` is like `zprofile`, except sourced after zshrc.
 
 
-### .zlogout
+### zlogout
 
-.zlogout is sourced when login shells exit.
+`zlogout` is sourced when login shells exit.
