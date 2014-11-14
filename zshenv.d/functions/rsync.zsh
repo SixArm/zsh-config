@@ -31,7 +31,7 @@ rsp(){
 #
 #    rsrm foo goo
 #    #=> rs foo bar && rm foo
-#  
+#
 rsrm(){
     rsync -aHuOxzvi "$@" && rm -rf "$1"
 }

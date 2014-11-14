@@ -41,6 +41,7 @@ What goes in it:
 
   * Set up the command search path
   * Other important environment variables
+  * Commands to set up aliases and functions that are needed for other scripts
 
 What does NOT go in it:
 
@@ -61,6 +62,7 @@ What goes in it:
 What does NOT go in it:
 
   * Alias definitions
+  * Function definitions
   * Options
   * Environment variable settings
 
@@ -71,7 +73,7 @@ What does NOT go in it:
 
 What goes in it:
 
-  * Commands to set up aliases, functions, options, key bindings, etc.
+  * Commands to set up aliases, functions, options, key bindings, for interactive use etc.
 
 
 ### zlogin
