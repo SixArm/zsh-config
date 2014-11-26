@@ -1,0 +1,2 @@
+setopt extendedglob nomatch notify
+
