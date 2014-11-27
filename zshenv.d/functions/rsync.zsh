@@ -20,7 +20,7 @@ rs(){
 # This is suitable for fast resume of any broken transfers;
 # the partial flags need directory write permission.
 #
-rsp(){
+rs-p(){
     rsync -aHuOxzvi --progress --partial --partial-dir=.rsync-partial-dir "$@"
 }
 
@@ -32,6 +32,6 @@ rsp(){
 #    rsrm foo goo
 #    #=> rs foo bar && rm foo
 #
-rsrm(){
+rs-rm(){
     rsync -aHuOxzvi "$@" && rm -rf "$1"
 }
