@@ -59,4 +59,4 @@ bindkey -e
 # backward delete
 bindkey "\e[3~" delete-char
 
-for f in /etc/zshrc.d/**/*; do; [ -r $f ] && source $f; done
+for f in /etc/zshrc.d/**/*.zsh(N); do; [ -r $f ] && source $f; done
