@@ -1,4 +1,4 @@
-# SixArm.com » Z shell » <br> /etc/zsh* system setup
+# Z shell » <br> /etc/zsh* system setup
 
 
 ## To install for all users
