@@ -58,7 +58,7 @@ export WORDCHARS='*?_-.[]~&;!#$%^(){}<>'
 
 (( ${+BROWSER} )) || export BROWSER="w3m"
 (( ${+EDITOR} ))  || export EDITOR="emacs -nw --color=no"
-(( ${+PAGER} ))   || export PAGER="most"
+(( ${+PAGER} ))   || export PAGER="less"
 
 
 ### FUNCTIONS ###
