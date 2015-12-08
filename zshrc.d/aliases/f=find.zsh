@@ -1,2 +1,2 @@
 # find text in files
-alias f='ag'
+alias f='sift'
