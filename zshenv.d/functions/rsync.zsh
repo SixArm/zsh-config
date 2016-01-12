@@ -1,6 +1,12 @@
 # Rsync functions
 
-# rs => rsync with settings for typical mirroring.
+# rsync-mirror => rsync with settings for typical mirroring.
+#
+# Example:
+#
+#     rsync-mirror ~/foo/ ~/bar/
+#
+# Flags:
 #
 #  * archive, including hardlinks
 #  * update, i.e. only sync when the src file is newer than dst file
@@ -10,28 +16,49 @@
 #  * verbose
 #  * itemize changes
 #
-rs(){
+rsync-mirror(){
     rsync -aHuOxzvi "$@"
 }
 
-# rsp => rsync with settings for typical mirroring,
-# plus a progress bar and and partial directory.
+# rsync-mirror-exact => rsync-mirror then delete all extraneous dest items.
 #
-# This is suitable for fast resume of any broken transfers;
-# the partial flags need directory write permission.
+# Example:
 #
-rs-p(){
-    rsync -aHuOxzvi --progress --partial --partial-dir=.rsync-partial-dir "$@"
+#     rsync-mirror-exact ~/foo/ ~/bar/
+#
+# This can be useful for making an exact copy of the source items,
+# especially when source items may already exist in the destination.
+#
+# We use --delete-after, rather than --delete-before or --delete-during,
+# because we want the command to be able to copy on top of existing items
+# that may link to each other, such as publishing a website with many pages.
+#
+rsync-mirror-exact(){
+    rsync -aHuOxzvi --delete-after "$@"
 }
 
-# rsrm => rsync with settings for typical mirroring, then rm the src.
+# rsync-mirror-merge => rsync-mirror then delete all source items.
 #
-# This is useful for normalizing our backups and naming conventions:
-# we want to keep either the src or the dst depending on which is newer.
+# Example:
 #
-#    rsrm foo goo
-#    #=> rs foo bar && rm foo
+#     rsync-mirror-merge ~/foo/ ~/bar/
 #
-rs-rm(){
+# This can be useful for cleaning up filesystems and its directories.
+#
+rsync-mirror-merge(){
     rsync -aHuOxzvi "$@" && rm -rf "$1"
+}
+
+# rsync-mirror-progressive => rsync-mirror with a progress bar and partials.
+#
+# Example:
+#
+#     rsync-mirror-progressive ~/foo/ ~/bar/
+#
+# This can be useful for interactive mirroring, when you want to watch
+# the progress bar and also want to be able to resume broken transfers.
+# Be aware that the partial flags necessitate directory write permissions.
+#
+rsync-mirror-progressive(){
+    rsync -aHuOxzvi --progress --partial --partial-dir=.rsync-partial-dir "$@"
 }
