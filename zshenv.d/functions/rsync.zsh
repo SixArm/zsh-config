@@ -6,18 +6,39 @@
 #
 #     rsync-mirror ~/foo/ ~/bar/
 #
-# Flags:
+# Options:
 #
-#  * archive, including hardlinks
-#  * update, i.e. only sync when the src file is newer than dst file
-#  * omit directories when preserving times (necessary for some file systems)
-#  * limit to one file system
-#  * compress
-#  * verbose
-#  * itemize changes
+#   -a, --archive           archive mode; same as -rlptgoD (no -H)
+#   -H, --hard-links        preserve hard links
+#   -O, --omit-dir-times    omit directories when preserving times
+#   -x, --one-file-system   don't cross filesystem boundaries
+#   -z, --compress          compress file data during the transfer
+#   -v, --verbose           increase verbosity
+#   -i, --itemize-changes   output a change-summary for all updates
 #
 rsync-mirror(){
-    rsync -aHuOxzvi "$@"
+    rsync -aHOxzvi "$@"
+}
+
+# rsync-mirror-update => rsync-mirror plus update.
+#
+# Example:
+#
+#     rsync-mirror ~/foo/ ~/bar/
+#
+# Options:
+#
+#   -a, --archive           archive mode; same as -rlptgoD (no -H)
+#   -H, --hard-links        preserve hard links
+#   -O, --omit-dir-times    omit directories when preserving times
+#   -x, --one-file-system   don't cross filesystem boundaries
+#   -z, --compress          compress file data during the transfer
+#   -v, --verbose           increase verbosity
+#   -i, --itemize-changes   output a change-summary for all updates
+#   -u, --update            skip files that are newer on the receiver
+#
+rsync-mirror-update(){
+    rsync -aHOxzviu "$@"
 }
 
 # rsync-mirror-exact => rsync-mirror then delete all extraneous dest items.
@@ -26,18 +47,15 @@ rsync-mirror(){
 #
 #     rsync-mirror-exact ~/foo/ ~/bar/
 #
-# This can be useful for making an exact copy of the source items,
-# especially when source items may already exist in the destination.
-#
 # We use --delete-after, rather than --delete-before or --delete-during,
 # because we want the command to be able to copy on top of existing items
-# that may link to each other, such as publishing a website with many pages.
+# that may link to each other, such as a website that has many pages.
 #
 rsync-mirror-exact(){
-    rsync -aHuOxzvi --delete-after "$@"
+    rsync -aHOxzvi --delete-after "$@"
 }
 
-# rsync-mirror-merge => rsync-mirror then delete all source items.
+# rsync-mirror-merge => rsync-mirror-update then delete all source items.
 #
 # Example:
 #
@@ -46,10 +64,10 @@ rsync-mirror-exact(){
 # This can be useful for cleaning up filesystems and its directories.
 #
 rsync-mirror-merge(){
-    rsync -aHuOxzvi "$@" && rm -rf "$1"
+    rsync -aHOxzviu "$@" && rm -rf "$1"
 }
 
-# rsync-mirror-progressive => rsync-mirror with a progress bar and partials.
+# rsync-mirror-progressive => rsync-mirror-update plus progress bar and partials.
 #
 # Example:
 #
@@ -60,5 +78,5 @@ rsync-mirror-merge(){
 # Be aware that the partial flags necessitate directory write permissions.
 #
 rsync-mirror-progressive(){
-    rsync -aHuOxzvi --progress --partial --partial-dir=.rsync-partial-dir "$@"
+    rsync -aHOxzvi --progress --partial --partial-dir=.rsync-partial-dir "$@"
 }
