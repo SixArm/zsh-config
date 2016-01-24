@@ -36,19 +36,6 @@ if [[ "$TERM" != emacs ]]; then
 [[ "$terminfo[kend]" == "O"* ]] && bindkey -M emacs "${terminfo[kend]/O/[}" end-of-line
 fi
 
-# zstyle
-zstyle ':completion:*:sudo:*' command-path \
-  /usr/local/sbin \
-  /usr/local/bin \
-  /usr/sbin \
-  /usr/bin \
-  /sbin \
-  /bin \
-  /usr/X11R6/bin
-zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
-zstyle ':completion:*:warnings' format '%BSorry no matches for: %d%b'
-
-
 [[ -n $(alias run-help) ]] && unalias run-help
 autoload run-help
 
@@ -82,6 +69,8 @@ autoload run-help
 #
 #   -C skip the entire security check
 #
+#   -d dump to cache
+#
 # We prefer to skip the entire security check, because our typical
 # zsh setups deliberately use non-root users and non-root groups.
 # For example, we use an "admin" group and group-writeable paths.
@@ -96,7 +85,7 @@ autoload run-help
 # skip_global_compinit=1
 # in your $ZDOTDIR/.zshenv or $ZDOTDIR/.zprofice
 if [[ -z "$skip_global_compinit" ]]; then
-   autoload -Uz compinit && compinit -C
+   autoload -Uz compinit && compinit -C -d ~/.zcompdump
 fi
 
 ### BINDINGS ###
