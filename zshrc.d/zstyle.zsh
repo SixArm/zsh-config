@@ -29,6 +29,7 @@
 # Our general preferences:
 #
 #   * Put settings for fonts and colors in personal files, not here.
+#   * Use settings for typical fast systems e.g. plenty of caching.
 #
 # Credit:
 #
@@ -83,7 +84,7 @@ zstyle ':completion:*:descriptions' format '%d'
 
 ###
 #
-# Menu
+# Misc
 #
 ###
 
@@ -101,18 +102,15 @@ zstyle ':completion:*:descriptions' format '%d'
 # removes the list and restores the command line.
 zstyle ':completion:*' menu select
 
-###
-#
-# Misc
-#
-###
-
 # verbose: many completion functions can generate matches in a simple
 # form and a verbose form. zstyle uses the "verbose" style to decide
 # which to use. We prefer always using the verbose form.
 zstyle ':completion:*' verbose yes
 
-# Continuously update completions
+# rehash: montinuously update completions. This tells zsh not to trust
+# its cache when completing. There is a performance cost. The cost is
+# negligible on a typical desktop setting today. The cost may be
+# significant if you have $PATH on NFS, or a RAM-starved system.
 zstyle ':completion:*' rehash yes
 
 ###
@@ -187,7 +185,6 @@ zstyle ':completion:*' group-name ''
 #bindkey -M listscroll q send-break # quit pager with 'q'
 #bindkey -M menuselect '\C-o' accept-and-menu-complete # in menu seletion, Ctrl-o to accept the match but remain in menu selection
 #bindkey '^[[Z' reverse-menu-complete
-#
 
 ## approximate completion
 #zstyle ':completion:*:corrections' format '%B%d (errors: %e)%b'
