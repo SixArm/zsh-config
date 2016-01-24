@@ -67,13 +67,6 @@ export WORDCHARS='*?_-.[]~&;!#$%^(){}<>'
 setenv() { export $1=$2 }
 
 
-### MISC ###
-
-zstyle :compinstall filename '~/.zshrc'
-autoload -Uz compinit
-compinit
-
-
 ### INCLUDE ###
 
 for f in /etc/zshenv.d/**/*.zsh(N); do; [ -r $f ] && source $f; done
