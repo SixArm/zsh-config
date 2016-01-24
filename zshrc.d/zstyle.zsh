@@ -29,13 +29,14 @@
 # Our general preferences:
 #
 #   * Put settings for fonts and colors in personal files, not here.
-#   * Use settings for typical fast systems e.g. plenty of caching.
+#   * Use settings for our typical systems e.g. plenty of CPU and RAM.
 #
 # Credit:
 #
 #   * http://zsh.sourceforge.net/Guide/zshguide06.html
 #   * http://www.masterzen.fr/2009/04/19/in-love-with-zsh-part-one/
 #   * https://github.com/andreivolt/dotfiles/blob/master/zshrc
+#   * http://unix.stackexchange.com/questions/2179/rebuild-auto-complete-index-or-whatever-its-called-and-binaries-in-path-cach
 #
 ###
 
@@ -108,9 +109,13 @@ zstyle ':completion:*' menu select
 zstyle ':completion:*' verbose yes
 
 # rehash: montinuously update completions. This tells zsh not to trust
-# its cache when completing. There is a performance cost. The cost is
-# negligible on a typical desktop setting today. The cost may be
-# significant if you have $PATH on NFS, or a RAM-starved system.
+# its cache when completing. There is a performance cost.
+#
+#   * The cost is negligible on a typical desktop setting today.
+#
+#   * The cost may be significant if you have $PATH on NFS,
+#     or you are using a system that is RAM-starved.
+#
 zstyle ':completion:*' rehash yes
 
 ###
