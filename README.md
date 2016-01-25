@@ -5,7 +5,7 @@
 
 To install for all users system-wide:
 
-    sudo cp -R z* /etc/
+    sudo cp -R zlogin* zlogout* zprofile* zshenv* zshrc* /etc/
 
 Caution: this may overwrite you system's existing zsh files, so look first.
 
