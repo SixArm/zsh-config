@@ -28,9 +28,15 @@ We organize our files in corresponding directories:
     zlogin.d
     zlogout.d
 
+Some zsh setups provide more files that are not read by zsh:
+
+    .zsh-update  # contains a timestamp of the most recent update
+    .zshrc-e  # example files end in "-e"
+
 The default location for zsh system-wide files is in `/etc`.
 
 The default location for zsh user files is in $HOME. We can customize this by setting $ZDOTDIR.
+
 
 
 ### zshenv
