@@ -7,3 +7,4 @@
 # Global Order: zshenv, zprofile, zshrc, zlogin
 
 for f in /etc/zprofile.d/**/*.zsh(N); do; [ -r $f ] && source $f; done
+
