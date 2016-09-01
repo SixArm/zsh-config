@@ -1,12 +1,10 @@
 # bindkey settings
-#
-# TODO: research if the below items are useful additions.
-#
-#     # emacs style key binding
-#     bindkey -e
-#
-#     # backward delete
-#     bindkey "\e[3~" delete-char
+
+# emacs style key binding
+bindkey -e
+
+# backward delete
+bindkey "\e[3~" delete-char
 
 if [[ "$TERM" != emacs ]]; then
 
