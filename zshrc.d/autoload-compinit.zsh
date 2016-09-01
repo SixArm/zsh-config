@@ -2,8 +2,6 @@
 #
 # autoload & compinit
 #
-###
-
 # autoload:
 #
 #   -U Suppress the usual alias expansion during reading.
@@ -12,7 +10,7 @@
 #
 #   -z use zsh native, not ksh emulation, as if the option
 #      KSH_AUTOLOAD were unset or were set, respectively.
-
+#
 # compinit, i.e. man zshcompsys:
 #
 # For security reasons compinit checks if the completion system would
@@ -29,7 +27,7 @@
 #   -C skip the entire security check
 #
 #   -d dump to cache
-
+#
 # We prefer to skip the entire security check, because our typical
 # zsh setups deliberately use non-root users and non-root groups.
 # For example, we use an "admin" group and group-writeable paths.
@@ -39,11 +37,14 @@
 #
 # Our opinion is zsh should not try to be responsible for path
 # permissions, therefore we use compinit -C to skip checking.
-
-# If you don't want compinit called here, place the line
-# skip_global_compinit=1
-# in your $ZDOTDIR/.zshenv or $ZDOTDIR/.zprofice
+#
+# If you don't want compinit called here, place this line:
+#
+#     skip_global_compinit=1
+#
+# in your $ZDOTDIR/.zshenv or $ZDOTDIR/.zprofile
 
 if [[ -z "$skip_global_compinit" ]]; then
-   autoload -Uz compinit && compinit -C -d ~/.zcompdump
+   autoload -Uz compinit 
+   compinit -C -d ~/.zcompdump
 fi
