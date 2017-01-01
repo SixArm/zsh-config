@@ -1,2 +1,8 @@
 # Jump directory
-[ -d ~/.jump ] && alias j="cd ~/.jump; cd "
+#
+# Example:
+#
+#     JUMPER="cd ~/.jump/"
+#     export JUMPER
+#
+j="${JUMPER}"

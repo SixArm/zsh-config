@@ -1,2 +1,1 @@
-alias p="$PAGER"
-
+alias p="${PAGER}"

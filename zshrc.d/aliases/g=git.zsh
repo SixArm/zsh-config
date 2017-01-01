@@ -1,1 +1,1 @@
-alias g='git'
+alias g='${GIT}'

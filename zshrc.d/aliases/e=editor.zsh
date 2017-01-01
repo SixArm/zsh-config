@@ -1,1 +1,1 @@
-alias e="$EDITOR"
+alias e="${EDITOR}"
