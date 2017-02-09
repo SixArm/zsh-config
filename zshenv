@@ -59,10 +59,36 @@ export WORDCHARS='*?_-.[]~&;!#$%^(){}<>'
 
 ### APPS ###
 
+# Example choices for browser:
+#
+#     w3m
+#     lynx
+#
 (( ${+BROWSER} )) || export BROWSER="w3m"
-(( ${+EDITOR} ))  || export EDITOR="emacs -nw --color=no"
+
+# Example choices for editor:
+#
+#     vim
+#     emacs -nw --color=no
+#     emacsclient -c -a ""
+#
+(( ${+EDITOR} ))  || export EDITOR="emacsclient -c -a ''"
+
+# Example choices for pager:
+#
+#     less
+#     most
+#     more
+#
 (( ${+PAGER} ))   || export PAGER="less"
 
+# Example choices for finder:
+#
+#     grep
+#     ag
+#     rg
+#
+(( ${+FINDER} ))   || export FINDER="rg"
 
 ### FUNCTIONS ###
 
