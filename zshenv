@@ -92,6 +92,20 @@ export WORDCHARS='*?_-.[]~&;!#$%^(){}<>'
 #
 (( ${+FINDER} ))   || export FINDER="rg"
 
+# Example choices for clipper:
+#
+#     xclip on Linux
+#     pbcopy on macOS
+#
+if command -v xclip >/dev/null 2>&1; then
+  (( ${+CLIPPER} )) || export CLIPPER="xclip"
+elif command -v pbcopy >/dev/null 2>&1; then
+  (( ${+CLIPPER} )) || export CLIPPER="pbcopy"
+elif
+  (( ${+CLIPPER} )) || export CLIPPER=""
+fi
+
+
 ### FUNCTIONS ###
 
 # csh compatibility
