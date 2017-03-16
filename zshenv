@@ -101,7 +101,7 @@ if command -v xclip >/dev/null 2>&1; then
   (( ${+CLIPPER} )) || export CLIPPER="xclip"
 elif command -v pbcopy >/dev/null 2>&1; then
   (( ${+CLIPPER} )) || export CLIPPER="pbcopy"
-elif
+else
   (( ${+CLIPPER} )) || export CLIPPER=""
 fi
 
