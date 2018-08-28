@@ -64,7 +64,7 @@ export WORDCHARS='*?_-.[]~&;!#$%^(){}<>'
 #     w3m
 #     lynx
 #
-(( ${+BROWSER} )) || export BROWSER="w3m"
+(( ${+BROWSER} )) || export BROWSER=$(command -v w3m || command -v lynx || "")
 
 # Example choices for editor:
 #
@@ -78,34 +78,28 @@ export WORDCHARS='*?_-.[]~&;!#$%^(){}<>'
 
 # Example choices for pager:
 #
-#     less
+#     bat
 #     most
+#     less
 #     more
 #     cat
-#     bat
 #
-(( ${+PAGER} )) || export PAGER="bat"
+(( ${+PAGER} )) || export PAGER=$(command -v bat || command -v most || command -v less || command -v cat || "")
 
 # Example choices for finder:
 #
-#     grep
-#     ag
 #     rg
+#     ag
+#     grep
 #
-(( ${+FINDER} ))   || export FINDER="rg"
+(( ${+FINDER} )) || export FINDER=$(command -v rg || command -v ag || command -v grep || "")
 
 # Example choices for clipper:
 #
 #     xclip on Linux
 #     pbcopy on macOS
 #
-if command -v xclip >/dev/null 2>&1; then
-  (( ${+CLIPPER} )) || export CLIPPER="xclip"
-elif command -v pbcopy >/dev/null 2>&1; then
-  (( ${+CLIPPER} )) || export CLIPPER="pbcopy"
-else
-  (( ${+CLIPPER} )) || export CLIPPER=""
-fi
+(( ${+CLIPPER} )) || export CLIPPER=$(command -v xclip || command -v pbcopy || "")
 
 
 ### FUNCTIONS ###
