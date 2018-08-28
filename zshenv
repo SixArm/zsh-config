@@ -81,8 +81,10 @@ export WORDCHARS='*?_-.[]~&;!#$%^(){}<>'
 #     less
 #     most
 #     more
+#     cat
+#     bat
 #
-(( ${+PAGER} ))   || export PAGER="less"
+(( ${+PAGER} )) || export PAGER="bat"
 
 # Example choices for finder:
 #
