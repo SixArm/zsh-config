@@ -56,52 +56,6 @@ fi
 # behavior of using alt-backspace to go up a file path.
 export WORDCHARS='*?_-.[]~&;!#$%^(){}<>'
 
-
-### APPS ###
-
-# Example choices for browser:
-#
-#     w3m
-#     lynx
-#
-(( ${+BROWSER} )) || export BROWSER=$(command -v w3m || command -v lynx || "")
-
-# Example choices for editor:
-#
-#     vim
-#     emacs -nw --color=no
-#     emacsclient --alternate-editor="" -c "$@"
-#
-(( ${+EDITOR} )) || export EDITOR="emacsclient -a '' -c"
-(( ${+ALTERNARTE_EDITOR} )) || export ALTERNATE_EDITOR="emacs"
-(( ${+VISUAL} )) || export VISUAL="emacsclient -a '' -c"
-
-# Example choices for pager:
-#
-#     bat
-#     most
-#     less
-#     more
-#     cat
-#
-(( ${+PAGER} )) || export PAGER=$(command -v bat || command -v most || command -v less || command -v cat || "")
-
-# Example choices for finder:
-#
-#     rg
-#     ag
-#     grep
-#
-(( ${+FINDER} )) || export FINDER=$(command -v rg || command -v ag || command -v grep || "")
-
-# Example choices for clipper:
-#
-#     xclip on Linux
-#     pbcopy on macOS
-#
-(( ${+CLIPPER} )) || export CLIPPER=$(command -v xclip || command -v pbcopy || "")
-
-
 ### FUNCTIONS ###
 
 # csh compatibility
