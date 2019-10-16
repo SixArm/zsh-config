@@ -1,3 +1,6 @@
 # apache = /etc/init.d/apache2 || /etc/initd.httpd
-[ -e /etc/init.d/apache2 ] && alias apache='sudo /etc/init.d/apache2 '
-[ -e /etc/init.d/httpd ] && alias apache='sudo /etc/init.d/httpd '
+if [ -e /etc/init.d/apache2 ]; then
+    alias apache='sudo /etc/init.d/apache2 '
+elif [ -e /etc/init.d/httpd ]; then
+    alias apache='sudo /etc/init.d/httpd '
+fi
