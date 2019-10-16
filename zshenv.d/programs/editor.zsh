@@ -4,6 +4,6 @@
 #     emacs -nw --color=no
 #     emacsclient --alternate-editor="" -c "$@"
 #
-(( ${+EDITOR} )) || export EDITOR="emacsclient -a '' -c"
-(( ${+ALTERNARTE_EDITOR} )) || export ALTERNATE_EDITOR="emacs"
-(( ${+VISUAL} )) || export VISUAL="emacsclient -a '' -c"
+(( ${+EDITOR} )) || export EDITOR="vim"
+(( ${+ALTERNARTE_EDITOR} )) || export ALTERNATE_EDITOR="vim"
+(( ${+VISUAL} )) || export VISUAL="vim"
