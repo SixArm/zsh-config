@@ -1,13 +1,13 @@
 # Bundle aliases
 
-# bi => bundle install with best isolation options
-alias bi='bundle install --path vendor/bundle --binstubs vendor/bundle/binstubs'
-alias bi-d='RAILS_ENV=development bundle install --path vendor/bundle --binstubs vendor/bundle/binstubs --without ""'
-alias bi-t='RAILS_ENV=test bundle install --path vendor/bundle --binstubs vendor/bundle/binstubs --without ""'
-alias bi-p='RAILS_ENV=production bundle install --path vendor/bundle --binstubs vendor/bundle/binstubs --without development test guard jasmine quality'
+# bundle install, with our preferred isolation options
+alias bundle-i='bundle install --path vendor/bundle --binstubs vendor/bundle/binstubs'
+alias bundle-i-d='RAILS_ENV=development bundle install --path vendor/bundle --binstubs vendor/bundle/binstubs --without ""'
+alias bundle-i-t='RAILS_ENV=test bundle install --path vendor/bundle --binstubs vendor/bundle/binstubs --without ""'
+alias bundle-i-p='RAILS_ENV=production bundle install --path vendor/bundle --binstubs vendor/bundle/binstubs --without development test guard jasmine quality'
 
-# bx  => bundle exec
-alias bx='bundle exec'
-alias bx-d='RAILS_ENV=development bundle exec'
-alias bx-t='RAILS_ENV=test bundle exec'
-alias bx-p='RAILS_ENV=production bundle exec'
+# bundle exec, with our preferred isolation options
+alias bundle-x='bundle exec'
+alias bundle-x-d='RAILS_ENV=development bundle exec'
+alias bundle-x-t='RAILS_ENV=test bundle exec'
+alias bundle-x-p='RAILS_ENV=production bundle exec'
