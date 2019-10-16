@@ -1,4 +1,4 @@
-# Aliases for zsh
+# Aliases for zsh - customize as you like
 
 # Suggestions from zsh-lovers
 # http://grml.org/zsh/zsh-lovers.html
