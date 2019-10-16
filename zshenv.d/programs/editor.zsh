@@ -1,9 +1,10 @@
 # Example choices for editor:
 #
-#     vim
-#     emacs -nw --color=no
-#     emacsclient --alternate-editor="" -c "$@"
+#   * vi
+#   * vim
+#   * emacs -nw --color=no
+#   * emacsclient --alternate-editor="" -c "$@"
 #
-(( ${+EDITOR} )) || export EDITOR="vim"
-(( ${+ALTERNARTE_EDITOR} )) || export ALTERNATE_EDITOR="vim"
-(( ${+VISUAL} )) || export VISUAL="vim"
+(( ${+EDITOR} )) || export EDITOR=$( command -v vim || command -v vi || "" )
+(( ${+ALTERNARTE_EDITOR} )) || export ALTERNATE_EDITOR=$( command -v vim || command -v vi || "" )
+(( ${+VISUAL} )) || export VISUAL=$( command -v vim || command -v vi || "" )
