@@ -235,7 +235,7 @@ Date/time format conventions:
 Clone:
 
 ```zsh
-git clone https:://github.com/sixarm/sixarm_zsh_config
+git clone https://github.com/sixarm/sixarm_zsh_config
 ```
 
 Move the directories and files as you like, to wherever you want.
