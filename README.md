@@ -262,7 +262,7 @@ To do this, we put the repo in our preferred directory `/opt`:
 
 
 ```zsh
-git clone https:://github.com/sixarm/sixarm_zsh_etc_files /opt/sixarm_zsh_etc_files
+git clone https://github.com/sixarm/sixarm_zsh_etc_files /opt/sixarm_zsh_etc_files
 ```
 
 Each user can then use the files by editing the corresponding user file and adding a line like:
