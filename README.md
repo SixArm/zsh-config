@@ -80,11 +80,11 @@ $HOME/.zlogout.d
 To create the directories:
 
 ```zsh
-mkdir -p /etc/zshenv.d
-mkdir -p /etc/zprofile.d
-mkdir -p /etc/zshrc.d
-mkdir -p /etc/zlogin.d
-mkdir -p /etc/zlogout.d
+sudo mkdir -p /etc/zshenv.d
+sudo mkdir -p /etc/zprofile.d
+sudo mkdir -p /etc/zshrc.d
+sudo mkdir -p /etc/zlogin.d
+sudo mkdir -p /etc/zlogout.d
 
 mkdir -p $HOME/.zshenv.d
 mkdir -p $HOME/.zprofile.d
