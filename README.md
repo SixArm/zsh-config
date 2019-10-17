@@ -246,7 +246,7 @@ For example, to copy all the files into your user directories:
 cd sixarm_zsh_etc_files
 cp -R zshenv.d/* $HOME/.zshenv.d
 cp -R zprofile.d/* $HOME/.zprofile.d
-cp -R zshrc.d/* $HOME/.zzshrc.d
+cp -R zshrc.d/* $HOME/.zshrc.d
 cp -R zlogin.d/* $HOME/.zlogin.d
 cp -R zlogout.d/* $HOME/.zlogout.d
 ```
