@@ -235,7 +235,7 @@ Date/time format conventions:
 Clone:
 
 ```zsh
-git clone https:://github.com/sixarm/sixarm_zsh_etc_files
+git clone https:://github.com/sixarm/sixarm_zsh_config
 ```
 
 Move the directories and files as you like, to wherever you want.
@@ -262,13 +262,13 @@ To do this, we put the repo in our preferred directory `/opt`:
 
 
 ```zsh
-git clone https://github.com/sixarm/sixarm_zsh_etc_files /opt/sixarm_zsh_etc_files
+git clone https://github.com/sixarm/sixarm_zsh_config /opt/sixarm_zsh_config
 ```
 
 Each user can then use the files by editing the corresponding user file and adding a line like:
 
 ```zsh
-for f in /opt/sixarm_zsh_etc_files/zshenv.d/**/*.zsh(N); do [ -r "$f" ] && source "$f"; done
+for f in /opt/sixarm_zsh_config/zshenv.d/**/*.zsh(N); do [ -r "$f" ] && source "$f"; done
 ```
 
 
