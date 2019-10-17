@@ -1,4 +1,4 @@
-# Example choices for DATER:
+# Example choices for dater:
 #
 #   * /usr/local/opt/coreutils/libexec/gnubin/date
 #   * gdate
