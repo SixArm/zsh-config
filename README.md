@@ -1,8 +1,22 @@
-# Z shell » <br> /etc/zsh* system setup
+# Z shell configuration
 
-We use Z shell extensively, on many kinds of systems, and with directory naming conventions that help with compatibility, flexibility, and portability. This repo describes our conventions and has our typical starter setup for Z shell aliases, functions, settings, etc.
+We use Z shell extensively, on many kinds of systems. We use a Z shell configuration and directory naming conventions that help with compatibility, flexibility, and portability. This repo describes our conventions and has our typical starter setup for Z shell aliases, functions, settings, etc. In practice this works well with other Z shell tools, such as oh-my-zsh.
 
-* [](#)
+* [zsh startup files](#zsh-startup-files)
+  * [zsh locations](#zsh-locations)
+  * [zsh directories](#zsh-directories)
+  * [zsh loading](#zsh-loading)
+* [zsh startup files: when they load and what they do](#zsh-startup-files-when-they-load-and-what-they-do)
+  * [zshenv](#zshenv)
+  * [zprofile](#zprofile)
+  * [zshrc](#zshrc)
+  * [zlogin](#zlogin)
+  * [zlogout](#zlogout)
+  * [extras](#extras)
+* [Repo files](#repo-files)
+  * [Install](#install)
+  * [Install system-wide](#install-system-wide)
+  * [Contribute your files](#contribute-your-files)
 
 
 ## zsh startup files
@@ -81,7 +95,10 @@ mkdir $HOME/.zlogin
 mkdir $HOME/.zlogout
 ```
 
-To make zsh load the files from the directories, we edit each zsh file, and add a line like this:
+
+### zsh loading
+
+To make zsh to load the files from the directories, we edit each zsh file, and add a line like this:
 
 ```zsh
 for f in /etc/zshenv.d/**/*.zsh(N); do [ -r "$f" ] && source "$f"; done
@@ -222,3 +239,8 @@ Each user can then use the files by editing the corresponding user file and addi
 ```zsh
 for f in /opt/sixarm_zsh_etc_files/zshenv.d/**/*.zsh(N); do [ -r "$f" ] && source "$f"; done
 ```
+
+
+### Contribute your files
+
+If you have zsh files that you like and that are good for many people, then send them along. We welcome additions, and also welcome pull requests.
