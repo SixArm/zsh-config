@@ -1,5 +1,9 @@
 # Jumper to do directory jump.
 #
-# TODO
+# Examples:
 #
-(( ${+JUMPER} )) || export JUMPER=""
+#   * [jd](https://github.com/khansamad47/jumpdir)
+#  
+#   * [jump](https://github.com/gsamokovarov/jump)
+#
+(( ${+JUMPER} )) || export JUMPER=$( command -v jd || command -v jump || "" )
