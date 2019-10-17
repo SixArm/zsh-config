@@ -2,6 +2,8 @@
 
 We use Z shell extensively, on many kinds of systems. We use a Z shell configuration and directory naming conventions that help with compatibility, flexibility, and portability. This repo describes our conventions and has our typical starter setup for Z shell aliases, functions, settings, etc. In practice this works well with other Z shell tools, such as oh-my-zsh.
 
+Contents:
+
 * [zsh startup files](#zsh-startup-files)
   * [zsh locations](#zsh-locations)
   * [zsh directories](#zsh-directories)
