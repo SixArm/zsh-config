@@ -16,6 +16,7 @@ Contents:
   * [zlogout](#zlogout)
   * [extras](#extras)
 * [Repo files](#repo-files)
+  * [Conventions](#conventions)
   * [Install](#install)
   * [Install system-wide](#install-system-wide)
   * [Contribute your files](#contribute-your-files)
@@ -195,6 +196,38 @@ Notable subdirectories:
   * `zshenv.d/settings` is for Z shell settings, such as for completion, histor, etc.
 
   * `zshrc.d/aliases` is for aliases, such as `g` for `git`, `now` for printing the current time, etc.
+
+
+### Conventions
+
+Alias conventions:
+
+  * For an alias that is a one-letter shortcut, we use a naming convention for the file: the letter, an equal sign, and the result. For example, the file `g=git.zsh` is the alias that sets `g` to run `git`.
+
+  * For an alias that is intended to launch a program, we use a convention of trying probable locations for the tool. For example, for the alias `firefox`, we look in order in `/opt` (e.g. typical for our custom installs), then on the path, then in the typical macOS location.
+
+
+Environment program conventions:
+
+  * `$EDITOR` for editing text files, such as `vi` or `emacs`.
+
+  * `$PAGER` for showing text files, such as `more` or `less`.
+  
+  * `$FINDER` for searching text files, such as `grep` or `rg`.
+
+  * `$CLIPPER` for copying text to a clipboard, such as `xclip` or `pbcopy`.
+  
+  * `$DATER` for showing dates and times, such as `date` or `gdate`.
+
+  * `$JUMPER` for moving among directories, such as `jump` or `jumpdir`.
+
+
+Date/time format conventions:  
+
+  * We default to nanoseconds precision (not seconds precision), because we use subsecond precision on some of our systems.
+
+  * We default to UTC timezone and the format "+00:00" (not "Z"), because this maximizes our compatibility with fintech systems and logs.
+
 
 
 ### Install
