@@ -77,24 +77,20 @@ $HOME/.zlogin.d
 $HOME/.zlogout.d
 ```
 
-To create the directories system-wide:
+To create the directories:
 
 ```zsh
-mkdir /etc/zshenv
-mkdir /etc/zprofile
-mkdir /etc/zshrc
-mkdir /etc/zlogin
-mkdir /etc/zlogout
-```
+mkdir -p /etc/zshenv.d
+mkdir -p /etc/zprofile.d
+mkdir -p /etc/zshrc.d
+mkdir -p /etc/zlogin.d
+mkdir -p /etc/zlogout.d
 
-To create the directories for your own user:
-
-```zsh
-mkdir $HOME/.zshenv
-mkdir $HOME/.zprofile
-mkdir $HOME/.zshrc
-mkdir $HOME/.zlogin
-mkdir $HOME/.zlogout
+mkdir -p $HOME/.zshenv.d
+mkdir -p $HOME/.zprofile.d
+mkdir -p $HOME/.zshrc.d
+mkdir -p $HOME/.zlogin.d
+mkdir -p $HOME/.zlogout.d
 ```
 
 
