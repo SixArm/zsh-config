@@ -3,7 +3,7 @@
 # Example:
 #
 #     $ now
-#     2019-10-17T00:22:47.765401000Z
+#     2019-10-17T00:22:47.765401000+00:00
 #
 # ## macOS issue
 #
@@ -26,4 +26,4 @@
 # The alias below will look for the brew directory and GNU command,
 # and will also look for the brew install of `gdate`.
 #
-alias now="$( command -v /usr/local/opt/coreutils/libexec/gnubin/date || command -v gdate || command -v date ) -u \"+%Y-%m-%dT%H:%M:%S.%N+00:00Z\""
+alias now="$( command -v /usr/local/opt/coreutils/libexec/gnubin/date || command -v gdate || command -v date ) -u \"+%Y-%m-%dT%H:%M:%S.%N+00:00\""
