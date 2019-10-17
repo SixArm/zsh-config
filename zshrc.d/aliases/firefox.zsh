@@ -1,3 +1,9 @@
 # Firefox aliases
-
-[ -e /opt/firefox/firefox ] && alias firefox='/opt/firefox/firefox'
+#
+# Examples:
+#
+#   * /opt/firefox/firefox
+#   * firefox
+#   * /Applications/Firefox.app/Contents/MacOS/firefox-bin
+#
+alias firefox=$( command -v /opt/firefox/firefox || command -v /opt/firefox/firefox || command -v /Applications/Firefox.app/Contents/MacOS/firefox-bin || "" )
