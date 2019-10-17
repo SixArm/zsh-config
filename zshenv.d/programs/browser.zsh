@@ -8,8 +8,3 @@
 #   * lynx
 
 (( ${+BROWSER} )) || export BROWSER=$( command -v chromium || command -v chromium-browser || command -v chrome || command -v google-chrome || command -v w3m || command -v lynx || "" )
-
-
-
-
-
