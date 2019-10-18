@@ -193,7 +193,7 @@ Notable subdirectories:
 
   * `zshenv.d/programs` is for configuring environment programs via environment variables, such as `$EDITOR`, `$PAGER`, etc.
 
-  * `zshenv.d/settings` is for Z shell settings, such as for completion, histor, etc.
+  * `zshenv.d/settings` is for Z shell settings, such as for completion, history, etc.
 
   * `zshrc.d/aliases` is for aliases, such as `g` for `git`, `now` for printing the current time, etc.
 
