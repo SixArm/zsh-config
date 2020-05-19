@@ -265,7 +265,7 @@ To do this, we put the repo in our preferred directory `/opt`:
 git clone https://github.com/sixarm/sixarm_zsh_config /opt/sixarm_zsh_config
 ```
 
-Each user can then use the files by editing the corresponding user file and adding a line like:
+Each user can then use the files by editing the corresponding user file and adding a  line like:
 
 ```zsh
 for f in /opt/sixarm_zsh_config/zshenv.d/**/*.zsh(N); do [ -r "$f" ] && source "$f"; done
