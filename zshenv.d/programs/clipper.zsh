@@ -1,4 +1,6 @@
-# Example choices for clipper:
+# Clipper is the shell program that copies text to the clipboard.
+#
+## Example choices:
 #
 #   * xclip on Linux
 #   * pbcopy on macOS

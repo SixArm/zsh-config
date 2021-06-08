@@ -1,4 +1,6 @@
-# Example choices for finder:
+# Finder is the shell program that finds text within files.
+#
+# Example choices:
 #
 #   * rg (ripgrep)
 #   * ag (the silver searcher)
