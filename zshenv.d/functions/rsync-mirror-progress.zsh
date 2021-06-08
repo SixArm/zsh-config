@@ -20,6 +20,6 @@
 #
 # Be aware that the partial flags necessitate directory write permissions.
 #
-rsync-mirror-progressive(){
+rsync-mirror-progress(){
     rsync -aHOxzvi --progress --partial --partial-dir=.rsync-partial-dir "$@"
 }
