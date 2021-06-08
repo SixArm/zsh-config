@@ -64,16 +64,15 @@ The convention is to use corresponding directories with names that end in `.d` s
 
 ### zsh loading
 
-To make zsh load everything we want, we edit our user zsh files such as `$HOME/.zshenv` and add a line like this:
+To make zsh load everything we want, we edit each of our user zsh files, and add a load script.
+
+Edit `$HOME/.zshenv` and add:
 
 ```zsh
-for file in \
-        /etc/zshenv{,.d/**/*}(.N) \
-        $HOME/.zshenv{,.d/**/*}(.N) \
-do
-        . "$f"
-done
+for f in /etc/zshenv{,.d/**/*}(.N) $HOME/.zshenv.d/**/*(.N); do . "$f"; done
 ```
+
+Edit each of the rest of the user zsh files, and add a corresponding load script.
 
 
 ## zsh startup files: when they load and what they do
