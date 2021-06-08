@@ -39,11 +39,7 @@ Below, we explain more about each of these files, when it is loaded, and what it
 
 ### zsh locations
 
-The default location for zsh system-wide files is in `/etc`.
-
-The default location for zsh user files is in `$HOME`; this can be customized by setting `$ZDOTDIR`.
-
-Thus the default locations are:
+The default location for zsh system files:
 
 ```zsh
 /etc/zshenv
@@ -51,7 +47,11 @@ Thus the default locations are:
 /etc/zshrc
 /etc/zlogin
 /etc/zlogout
+```
 
+The default location for zsh user files:
+
+```zsh
 $HOME/.zshenv
 $HOME/.zprofile
 $HOME/.zshrc
@@ -59,54 +59,20 @@ $HOME/.zlogin
 $HOME/.zlogout
 ```
 
-
-### zsh directories
-
-We use the default locations, plus a convention of corresponding directories where we can put additional files:
-
-```zsh
-/etc/zshenv.d
-/etc/zprofile.d
-/etc/zshrc.d
-/etc/zlogin.d
-/etc/zlogout.d
-
-$HOME/.zshenv.d
-$HOME/.zprofile.d
-$HOME/.zshrc.d
-$HOME/.zlogin.d
-$HOME/.zlogout.d
-```
-
-To create the directories:
-
-```zsh
-sudo mkdir -p /etc/zshenv.d
-sudo mkdir -p /etc/zprofile.d
-sudo mkdir -p /etc/zshrc.d
-sudo mkdir -p /etc/zlogin.d
-sudo mkdir -p /etc/zlogout.d
-
-mkdir -p $HOME/.zshenv.d
-mkdir -p $HOME/.zprofile.d
-mkdir -p $HOME/.zshrc.d
-mkdir -p $HOME/.zlogin.d
-mkdir -p $HOME/.zlogout.d
-```
+The convention is to use corresponding directories with names that end in `.d` such as `$HOME/zshenv.d`.
 
 
 ### zsh loading
 
-To make zsh to load the files from the directories, we edit each zsh file, and add a line like this:
+To make zsh load everything we want, we edit our user zsh files such as `$HOME/.zshenv` and add a line like this:
 
 ```zsh
-for f in /etc/zshenv.d/**/*.zsh(N); do [ -r "$f" ] && source "$f"; done
-```
-
-We must customize the above line for each specific path, such as this line for the user's file:
-
-```zsh
-for f in $HOME/.zshenv.d/**/*.zsh(N); do [ -r "$f" ] && source "$f"; done
+for file in \
+        /etc/zshenv{,.d/**/*}(.N) \
+        $HOME/.zshenv{,.d/**/*}(.N) \
+do
+        . "$f"
+done
 ```
 
 
@@ -254,21 +220,44 @@ cp -R zlogout.d/* $HOME/.zlogout.d
 
 ### Install system-wide
 
-For some of our systems, we prefer to install system-wide, so the repo files are available for all the system users.
+We prefer to install system-wide, making the repo files generally available for all system users.
 
-We also prefer to keep the repo directory independent, so we can fetch changes when we want. 
-
-To do this, we put the repo in our preferred directory `/opt`:
-
+We save the repo in our preferred directory `/opt`:
 
 ```zsh
-git clone https://github.com/sixarm/sixarm_zsh_config /opt/sixarm_zsh_config
+git clone https://github.com/sixarm/sixarm_zsh_config /opt/sixarm/sixarm_zsh_config
 ```
 
-Each user can then use the files by editing the corresponding user file and adding a  line like:
+Any system user can edit their own zsh files in order to source the repo files.
+
+Example: you can edit your user file `~/.zshev` to add this line near the top:
 
 ```zsh
-for f in /opt/sixarm_zsh_config/zshenv.d/**/*.zsh(N); do [ -r "$f" ] && source "$f"; done
+for file in \
+        /etc/environment \
+        /etc/environment.d(.N) \
+        /etc/zsh/zshenv \
+        /etc/zsh/zshenv.d/**/*.zsh(.N) \
+        /opt/sixarm_zsh_config/zshenv.d/**/*.zsh(.N) \
+        $HOME/.config/zshenv.d/**/*.zsh(.N) \
+; do
+    if [ -f "$file" ] && [ -r "$file" ] && [ -s "$file" ]; then
+        . "$file"
+    fi
+done
+```
+
+Example: you can edit your user file `~/.zshrc` to add this line near the top:
+
+```zsh
+for file in \
+        /opt/sixarm_zsh_config/zshenv.d/**/*.zsh(N) \
+        $HOME/.config/zshenv.d/**/*.zsh(N) \
+; do
+    if [ -f "$file" ] && [ -r "$file" ] && [ -s "$file" ]; then
+        . "$file"
+    fi
+done
 ```
 
 
