@@ -1,8 +1,8 @@
 # Clipper is the shell program that copies text to the clipboard.
 #
-## Example choices:
+# Example choices:
 #
-#   * xclip on Linux
 #   * pbcopy on macOS
+#   * xclip on Linux
 #
-(( ${+CLIPPER} )) || export CLIPPER=$( command -v xclip || command -v pbcopy || "" )
+(( ${+CLIPPER} )) || export CLIPPER=$( command -v pbcopy || command -v xclip || "" )
