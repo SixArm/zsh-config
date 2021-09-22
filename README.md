@@ -229,18 +229,18 @@ git clone https://github.com/sixarm/sixarm_zsh_config /opt/sixarm/sixarm_zsh_con
 
 Any system user can edit their own zsh files in order to source the repo files.
 
-Example: you can edit your user file `~/.zshev` to add this line near the top:
+Example: you can edit your user file `~/.zshev` to add lines near the top such as:
 
 ```zsh
 for file in \
         /etc/environment \
-        /etc/environment.d(.N) \
+        /etc/environment.d/**/*(.N) \
         /etc/zsh/zshenv \
-        /etc/zsh/zshenv.d/**/*.zsh(.N) \
-        /opt/sixarm_zsh_config/zshenv.d/**/*.zsh(.N) \
-        $HOME/.config/zshenv.d/**/*.zsh(.N) \
+        /etc/zsh/zshenv.d/**/*(.N) \
+        $HOME/.config/env/**/*(.N) \
+        $HOME/.config/zshenv/**/*(.N) \
 ; do
-    if [ -f "$file" ] && [ -r "$file" ] && [ -s "$file" ]; then
+    if [ -x "$file" ]; then
         . "$file"
     fi
 done
