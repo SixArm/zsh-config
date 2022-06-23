@@ -59,7 +59,17 @@ $HOME/.zlogin
 $HOME/.zlogout
 ```
 
-The convention is to use corresponding directories with names that end in `.d` such as `$HOME/zshenv.d`.
+The custom location for zsh user files is the directory `$ZDOTDIR`:
+
+```zsh
+$ZDOTDIR/.zshenv
+$ZDOTDIR/.zprofile
+$ZDOTDIR/.zshrc
+$ZDOTDIR/.zlogin
+$ZDOTDIR/.zlogout
+```
+
+The convention is to use corresponding directories with names that end in `.d` such as `${ZDOTDIR:-$HOME}/zshenv.d`.
 
 
 ### zsh loading
