@@ -262,7 +262,7 @@ Add this to the user file `.zshrc`:
 
 ```zsh
 config=${XDG_CONFIG_HOME:-$HOME/.config}
-for file in $config/zprofile.d/**/*(.N)
+for file in $config/zshrc.d/**/*(.N)
 do 
     [ -x "$file" ] &&  . "$file"
 done
@@ -282,7 +282,7 @@ Add this to the user file `.zlogout`:
 
 ```zsh
 config=${XDG_CONFIG_HOME:-$HOME/.config}
-for file in $config/zlogin.d/**/*(.N)
+for file in $config/zlogout.d/**/*(.N)
 do 
     [ -x "$file" ] &&  . "$file"
 done
@@ -337,7 +337,7 @@ Add this to the system file `zshrc`:
 
 ```zsh
 config=/etc
-for file in $config/zprofile.d/**/*(.N)
+for file in $config/zshrc.d/**/*(.N)
 do 
     [ -x "$file" ] &&  . "$file"
 done
@@ -357,7 +357,7 @@ Add this to the sytem file `zlogout`:
 
 ```zsh
 config=/etc
-for file in $config/zlogin.d/**/*(.N)
+for file in $config/zlogout.d/**/*(.N)
 do 
     [ -x "$file" ] &&  . "$file"
 done
