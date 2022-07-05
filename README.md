@@ -135,7 +135,7 @@ Our location for zsh system directories:
 /etc/zlogout.d
 ```
 
-Our location for zsh user directories:
+Our default location for zsh user directories:
 
 ```zsh
 $HOME/.config/zshenv.d
