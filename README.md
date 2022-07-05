@@ -1,25 +1,6 @@
 # Z shell configuration
 
-We use Z shell extensively, on many kinds of systems. We use a Z shell configuration and directory naming conventions that help with compatibility, flexibility, and portability. This repo describes our conventions and has our typical starter setup for Z shell aliases, functions, settings, etc. In practice this works well with other Z shell tools, such as oh-my-zsh.
-
-Contents:
-
-* [zsh startup files](#zsh-startup-files)
-  * [zsh locations](#zsh-locations)
-  * [zsh directories](#zsh-directories)
-  * [zsh loading](#zsh-loading)
-* [zsh startup files: when they load and what they do](#zsh-startup-files-when-they-load-and-what-they-do)
-  * [zshenv](#zshenv)
-  * [zprofile](#zprofile)
-  * [zshrc](#zshrc)
-  * [zlogin](#zlogin)
-  * [zlogout](#zlogout)
-  * [extras](#extras)
-* [Repo files](#repo-files)
-  * [Conventions](#conventions)
-  * [Install](#install)
-  * [Install system-wide](#install-system-wide)
-  * [Contribute your files](#contribute-your-files)
+We use Z shell extensively, on many kinds of systems. We use Z shell configurations and conventions that can help us with compatibility, flexibility, and portability. This repo describes our configurations and conventions. This repo has our typical starter setup for Z shell aliases, functions, settings, etc. In practice this works well with other Z shell tools, such as oh-my-zsh.
 
 
 ## zsh startup files
@@ -216,15 +197,15 @@ git clone https://github.com/sixarm/sixarm_zsh_config
 Move the directories and files as you like, to wherever you want.
 
 
-### Install the way we prefer
+### Install for one user and the way we prefer
 
-We prefer to use a user's configuration directory:
+For one user, we prefer to put files in a user's configuration directory:
 
 ```zsh
 config=${XDG_CONFIG_HOME:-$HOME/.config}
 ```
 
-Make the subdirectories:
+Make the directories:
 
 ```zsh
 mkdir -p $config/{zshenv.d,zprofile.d,zshrc.d,zlogin.d,zlogout.d}
@@ -240,94 +221,129 @@ cp -R sixarm-zsh-config/zlogin.d/* $config/zlogin.d
 cp -R sixarm-zsh-config/zlogout.d/* $config/zlogout.d
 ```
 
-Add this to your .zshev:
+Add this to the user file `.zshenv`:
 
 ```zsh
 config=${XDG_CONFIG_HOME:-$HOME/.config}
-for file in $config/zshenv.d/**/*(.N); do 
+for file in $config/zshenv.d/**/*(.N)
+do 
     [ -x "$file" ] &&  . "$file"
 done
 ```
 
-Add this to your .zprofile:
+Add this to the user file `.zprofile`:
 
 ```zsh
 config=${XDG_CONFIG_HOME:-$HOME/.config}
-for file in $config/zprofile.d/**/*(.N); do 
+for file in $config/zprofile.d/**/*(.N)
+do 
     [ -x "$file" ] &&  . "$file"
 done
 ```
 
-Add this to your .zshrc:
+Add this to the user file `.zshrc`:
 
 ```zsh
 config=${XDG_CONFIG_HOME:-$HOME/.config}
-for file in $config/zprofile.d/**/*(.N); do 
+for file in $config/zprofile.d/**/*(.N)
+do 
     [ -x "$file" ] &&  . "$file"
 done
 ```
 
-Add this to your .zlogin:
+Add this to the user file `.zlogin`:
 
 ```zsh
 config=${XDG_CONFIG_HOME:-$HOME/.config}
-for file in $config/zlogin.d/**/*(.N); do 
+for file in $config/zlogin.d/**/*(.N)
+do 
     [ -x "$file" ] &&  . "$file"
 done
 ```
 
-Add this to your .zlogout:
+Add this to the user file `.zlogout`:
 
 ```zsh
 config=${XDG_CONFIG_HOME:-$HOME/.config}
-for file in $config/zlogin.d/**/*(.N); do 
+for file in $config/zlogin.d/**/*(.N)
+do 
     [ -x "$file" ] &&  . "$file"
 done
 ```
 
+### Install for the sytem and the way we prefer
 
-### Install system-wide
-
-We prefer to install system-wide, making the repo files generally available for all system users.
-
-We save the repo in our preferred directory `/opt`:
+For the system, we prefer to put files in the system's `/etc` directory:
 
 ```zsh
-git clone https://github.com/sixarm/sixarm_zsh_config /opt/sixarm/sixarm_zsh_config
+config=/etc
 ```
 
-Any system user can edit their own zsh files in order to source the repo files.
-
-Example: you can edit your user file `~/.zshev` to add lines near the top such as:
+Make the directories:
 
 ```zsh
-for file in \
-        /etc/environment \
-        /etc/environment.d/**/*(.N) \
-        /etc/zsh/zshenv \
-        /etc/zsh/zshenv.d/**/*(.N) \
-        $HOME/.config/env/**/*(.N) \
-        $HOME/.config/zshenv/**/*(.N) \
-; do
-    if [ -x "$file" ]; then
-        . "$file"
-    fi
+mkdir -p $config/{zshenv.d,zprofile.d,zshrc.d,zlogin.d,zlogout.d}
+```
+
+Copy all the files:
+
+```zsh
+cp -R sixarm-zsh-config/zshenv.d/* $config/zshenv.d
+cp -R sixarm-zsh-config/zprofile.d/* $config/zprofile.d
+cp -R sixarm-zsh-config/zshrc.d/* $config/zshrc.d
+cp -R sixarm-zsh-config/zlogin.d/* $config/zlogin.d
+cp -R sixarm-zsh-config/zlogout.d/* $config/zlogout.d
+```
+
+Add this to the system file `zshenv`:
+
+```zsh
+config=/etc
+for file in $config/zshenv.d/**/*(.N)
+do 
+    [ -x "$file" ] &&  . "$file"
 done
 ```
 
-Example: you can edit your user file `~/.zshrc` to add this line near the top:
+Add this to the system file `/etc/zprofile`:
 
 ```zsh
-for file in \
-        /opt/sixarm_zsh_config/zshenv.d/**/*.zsh(N) \
-        $HOME/.config/zshenv.d/**/*.zsh(N) \
-; do
-    if [ -f "$file" ] && [ -r "$file" ] && [ -s "$file" ]; then
-        . "$file"
-    fi
+config=/etc
+for file in $config/zprofile.d/**/*(.N)
+do 
+    [ -x "$file" ] &&  . "$file"
 done
 ```
 
+Add this to the system file `zshrc`:
+
+```zsh
+config=/etc
+for file in $config/zprofile.d/**/*(.N)
+do 
+    [ -x "$file" ] &&  . "$file"
+done
+```
+
+Add this to the system file `zlogin`:
+
+```zsh
+config=/etc
+for file in $config/zlogin.d/**/*(.N)
+do 
+    [ -x "$file" ] &&  . "$file"
+done
+```
+
+Add this to the sytem file `zlogout`:
+
+```zsh
+config=/etc
+for file in $config/zlogin.d/**/*(.N)
+do 
+    [ -x "$file" ] &&  . "$file"
+done
+```
 
 ### Contribute your files
 
