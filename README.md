@@ -215,15 +215,74 @@ git clone https://github.com/sixarm/sixarm_zsh_config
 
 Move the directories and files as you like, to wherever you want.
 
-For example, to copy all the files into your user directories:
+
+### Install the way we prefer
+
+We prefer to use a user's configuration directory:
 
 ```zsh
-cd sixarm_zsh_etc_files
-cp -R zshenv.d/* $HOME/.zshenv.d
-cp -R zprofile.d/* $HOME/.zprofile.d
-cp -R zshrc.d/* $HOME/.zshrc.d
-cp -R zlogin.d/* $HOME/.zlogin.d
-cp -R zlogout.d/* $HOME/.zlogout.d
+config=${XDG_CONFIG_HOME:-$HOME/.config}
+```
+
+Make the subdirectories:
+
+```zsh
+mkdir -p $config/{zshenv.d,zprofile.d,zshrc.d,zlogin.d,zlogout.d}
+```
+
+Copy all the files:
+
+```zsh
+cp -R sixarm-zsh-config/zshenv.d/* $config/zshenv.d
+cp -R sixarm-zsh-config/zprofile.d/* $config/zprofile.d
+cp -R sixarm-zsh-config/zshrc.d/* $config/zshrc.d
+cp -R sixarm-zsh-config/zlogin.d/* $config/zlogin.d
+cp -R sixarm-zsh-config/zlogout.d/* $config/zlogout.d
+```
+
+Add this to your .zshev:
+
+```zsh
+config=${XDG_CONFIG_HOME:-$HOME/.config}
+for file in $config/zshenv.d/**/*(.N); do 
+    [ -x "$file" ] &&  . "$file"
+done
+```
+
+Add this to your .zprofile:
+
+```zsh
+config=${XDG_CONFIG_HOME:-$HOME/.config}
+for file in $config/zprofile.d/**/*(.N); do 
+    [ -x "$file" ] &&  . "$file"
+done
+```
+
+Add this to your .zshrc:
+
+```zsh
+config=${XDG_CONFIG_HOME:-$HOME/.config}
+for file in $config/zprofile.d/**/*(.N); do 
+    [ -x "$file" ] &&  . "$file"
+done
+```
+
+Add this to your .zlogin:
+
+```zsh
+config=${XDG_CONFIG_HOME:-$HOME/.config}
+for file in $config/zlogin.d/**/*(.N); do 
+    [ -x "$file" ] &&  . "$file"
+done
+```
+
+Add this to your .zlogout:
+
+```zsh
+config=${XDG_CONFIG_HOME:-$HOME/.config}
+for file in $config/zlogin.d/**/*(.N); do 
+    [ -x "$file" ] &&  . "$file"
+done
 ```
 
 
