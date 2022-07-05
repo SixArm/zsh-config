@@ -214,7 +214,7 @@ git clone https://github.com/sixarm/sixarm_zsh_config
 Move the directories and files as you like, to wherever you want.
 
 
-### Install for one user and the way we prefer
+### Install for one user using the way we prefer
 
 For one user, we prefer to put files in a user's configuration directory:
 
@@ -289,7 +289,7 @@ done
 ```
 
 
-### Install for the sytem and the way we prefer
+### Install for the system using the way we prefer
 
 For the system, we prefer to put files in the system's `/etc` directory:
 
