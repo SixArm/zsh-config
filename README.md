@@ -18,7 +18,7 @@ zlogout
 Below, we explain more about each of these files, when it is loaded, and what it does.
 
 
-### zsh locations
+### zsh file locations
 
 The default location for zsh system files:
 
@@ -40,17 +40,48 @@ $HOME/.zlogin
 $HOME/.zlogout
 ```
 
-The custom location for zsh user files is the directory `$ZDOTDIR`:
+The custom location for zsh user files uses the environment variable `ZDOTDIR`:
 
 ```zsh
-$ZDOTDIR/.zshenv
-$ZDOTDIR/.zprofile
-$ZDOTDIR/.zshrc
-$ZDOTDIR/.zlogin
-$ZDOTDIR/.zlogout
+${ZDOTDIR:-$HOME}/.zshenv
+${ZDOTDIR:-$HOME}/.zprofile
+${ZDOTDIR:-$HOME}/.zshrc
+${ZDOTDIR:-$HOME}/.zlogin
+${ZDOTDIR:-$HOME}/.zlogout
 ```
 
-The convention is to use corresponding directories with names that end in `.d` such as `${ZDOTDIR:-$HOME}/zshenv.d`.
+
+### zsh directory locations
+
+Our location for zsh system directories:
+
+```zsh
+/etc/zshenv.d
+/etc/zprofile.d
+/etc/zshrc.d
+/etc/zlogin.d
+/etc/zlogout.d
+```
+
+Our location for zsh user directories:
+
+```zsh
+$HOME/.config/zshenv.d
+$HOME/.config/zprofile.d
+$HOME/.config/zshrc.d
+$HOME/.config/zlogin.d
+$HOME/.config/zlogout.d
+```
+
+Our custom location for zsh user directories uses the environment variable `XDG_CONFIG_HOME`:
+
+```zsh
+${XDG_CONFIG_HOME:-$HOME/.config}/zshenv.d
+${XDG_CONFIG_HOME:-$HOME/.config}/zprofile.d
+${XDG_CONFIG_HOME:-$HOME/.config}/zshrc.d
+${XDG_CONFIG_HOME:-$HOME/.config}/zlogin.d
+${XDG_CONFIG_HOME:-$HOME/.config}/zlogout.d
+```
 
 
 ## zsh startup files: when they load and what they do
