@@ -192,13 +192,13 @@ For one user, we prefer to put files in a user's configuration directory:
 config=${XDG_CONFIG_HOME:-$HOME/.config}
 ```
 
-Make the directories:
+Make directories:
 
 ```zsh
 mkdir -p $config/{zshenv.d,zprofile.d,zshrc.d,zlogin.d,zlogout.d}
 ```
 
-Copy all the files:
+Copy files:
 
 ```zsh
 cp -R sixarm-zsh-config/zshenv.d/* $config/zshenv.d
@@ -267,13 +267,13 @@ For the system, we prefer to put files in the system's `/etc` directory:
 config=/etc
 ```
 
-Make the directories:
+Make directories:
 
 ```zsh
 mkdir -p $config/{zshenv.d,zprofile.d,zshrc.d,zlogin.d,zlogout.d}
 ```
 
-Copy all the files:
+Copy files:
 
 ```zsh
 cp -R sixarm-zsh-config/zshenv.d/* $config/zshenv.d
