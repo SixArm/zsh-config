@@ -15,74 +15,6 @@ zlogin
 zlogout
 ```
 
-Below, we explain more about each of these files, when it is loaded, and what it does.
-
-
-### zsh file locations
-
-The default location for zsh system files:
-
-```zsh
-/etc/zshenv
-/etc/zprofile
-/etc/zshrc
-/etc/zlogin
-/etc/zlogout
-```
-
-The default location for zsh user files:
-
-```zsh
-$HOME/.zshenv
-$HOME/.zprofile
-$HOME/.zshrc
-$HOME/.zlogin
-$HOME/.zlogout
-```
-
-The custom location for zsh user files uses the environment variable `ZDOTDIR`:
-
-```zsh
-${ZDOTDIR:-$HOME}/.zshenv
-${ZDOTDIR:-$HOME}/.zprofile
-${ZDOTDIR:-$HOME}/.zshrc
-${ZDOTDIR:-$HOME}/.zlogin
-${ZDOTDIR:-$HOME}/.zlogout
-```
-
-
-### zsh directory locations
-
-Our location for zsh system directories:
-
-```zsh
-/etc/zshenv.d
-/etc/zprofile.d
-/etc/zshrc.d
-/etc/zlogin.d
-/etc/zlogout.d
-```
-
-Our location for zsh user directories:
-
-```zsh
-$HOME/.config/zshenv.d
-$HOME/.config/zprofile.d
-$HOME/.config/zshrc.d
-$HOME/.config/zlogin.d
-$HOME/.config/zlogout.d
-```
-
-Our custom location for zsh user directories uses the environment variable `XDG_CONFIG_HOME`:
-
-```zsh
-${XDG_CONFIG_HOME:-$HOME/.config}/zshenv.d
-${XDG_CONFIG_HOME:-$HOME/.config}/zprofile.d
-${XDG_CONFIG_HOME:-$HOME/.config}/zshrc.d
-${XDG_CONFIG_HOME:-$HOME/.config}/zlogin.d
-${XDG_CONFIG_HOME:-$HOME/.config}/zlogout.d
-```
-
 
 ## zsh startup files: when they load and what they do
 
@@ -155,6 +87,73 @@ Some zsh setups provide more files that are not read by zsh:
   * `.zsh-update`: contains a timestamp of the most recent update
 
   * `.zshrc-e`: an example file; the Z shell convention is example files end in `-e`.
+
+
+
+## zsh file locations
+
+The default location for zsh system files:
+
+```zsh
+/etc/zshenv
+/etc/zprofile
+/etc/zshrc
+/etc/zlogin
+/etc/zlogout
+```
+
+The default location for zsh user files:
+
+```zsh
+$HOME/.zshenv
+$HOME/.zprofile
+$HOME/.zshrc
+$HOME/.zlogin
+$HOME/.zlogout
+```
+
+The custom location for zsh user files uses the environment variable `ZDOTDIR`:
+
+```zsh
+${ZDOTDIR:-$HOME}/.zshenv
+${ZDOTDIR:-$HOME}/.zprofile
+${ZDOTDIR:-$HOME}/.zshrc
+${ZDOTDIR:-$HOME}/.zlogin
+${ZDOTDIR:-$HOME}/.zlogout
+```
+
+
+## zsh directory locations
+
+Our location for zsh system directories:
+
+```zsh
+/etc/zshenv.d
+/etc/zprofile.d
+/etc/zshrc.d
+/etc/zlogin.d
+/etc/zlogout.d
+```
+
+Our location for zsh user directories:
+
+```zsh
+$HOME/.config/zshenv.d
+$HOME/.config/zprofile.d
+$HOME/.config/zshrc.d
+$HOME/.config/zlogin.d
+$HOME/.config/zlogout.d
+```
+
+Our custom location for zsh user directories uses the environment variable `XDG_CONFIG_HOME`:
+
+```zsh
+${XDG_CONFIG_HOME:-$HOME/.config}/zshenv.d
+${XDG_CONFIG_HOME:-$HOME/.config}/zprofile.d
+${XDG_CONFIG_HOME:-$HOME/.config}/zshrc.d
+${XDG_CONFIG_HOME:-$HOME/.config}/zlogin.d
+${XDG_CONFIG_HOME:-$HOME/.config}/zlogout.d
+```
 
 
 ## Repo files
